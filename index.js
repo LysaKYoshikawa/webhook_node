@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const { exec } = require('child_process');
 
 const app = express();
-const port = 3000;
+const port = 80;
 
 app.use(bodyParser.json());
 
@@ -12,7 +12,8 @@ app.post('/webhook', (req, res) => {
     // Verifica se o evento é um push para a branch 'main'
     if (ref === 'refs/heads/main') {
         // Ação específica para push na branch 'main'
-        console.log(`Novo commit no repositório aqui: ${repository.full_name}`);
+        repository == 'LysaKYoshikawa/webhook_node'
+        console.log(`Novo commit no repositório: ${repository.full_name}`);
         console.log(`Pusher: ${pusher.name}`);
 
         // Exemplo: Executar um script de construção e implantação
