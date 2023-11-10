@@ -12,7 +12,7 @@ app.post('/webhook', (req, res) => {
     // Verifica se o evento é um push para a branch 'main'
     if (ref === 'refs/heads/main') {
         // Ação específica para push na branch 'main'
-        console.log(`Novo commit no repositório: ${repository.full_name}`);
+        console.log(`Novo commit no repositório aqui: ${repository.full_name}`);
         console.log(`Pusher: ${pusher.name}`);
 
         // Exemplo: Executar um script de construção e implantação
@@ -28,6 +28,7 @@ app.post('/webhook', (req, res) => {
         // Outros eventos ou branches podem ser tratados aqui
         res.status(200).send('Notificação recebida, mas não é um push para a branch "main".');
     }
+
 });
 
 app.listen(port, () => {
